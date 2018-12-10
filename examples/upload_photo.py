@@ -5,9 +5,6 @@
 
 from InstagramAPI import InstagramAPI
 
-InstagramAPI = InstagramAPI("login", "password")
-InstagramAPI.login()  # login
-
 if(len(sys.argv) < 2):
     print("Usage : ", sys.argv[0], " /path/to/photo.jpg")
     sys.exit(0)
@@ -17,4 +14,7 @@ caption = "Sample photo"
 tag_list = ["example_tag"]
 for tag in tag_list:
     caption = caption + " #" + tag
+
+InstagramAPI = InstagramAPI("login", "password")
+InstagramAPI.login()  # login
 InstagramAPI.uploadPhoto(photo_path, caption=caption)
